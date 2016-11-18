@@ -1,1 +1,1 @@
-# Hello-World
+#jQuery Wrapper for PhotoSwipe
