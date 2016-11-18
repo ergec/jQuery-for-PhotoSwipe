@@ -54,8 +54,6 @@
 				$options.index = index;
 				_photoswipe.galleries[$galleryid2].obj = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, _photoswipe.galleries[$galleryid2].items, $options);
 				_photoswipe.galleries[$galleryid2].obj.init();
-				_photoswipe.galleries[$galleryid2].obj.listen('close', function() {
-				});
 				_photoswipe.galleries[$galleryid2].obj.listen('imageLoadComplete', function(index, item) {
 			        if (item.w == 0 && item.h == 0) {
 			        	var imgpreload = new Image(); 
