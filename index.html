@@ -8,6 +8,24 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+
+    <!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> 
+
+	<!-- PhotoSwipe Core CSS file -->
+	<link rel="stylesheet" href="src/PhotoSwipe/photoswipe.css"> 
+
+	<!-- PhotoSwipe Skin CSS file (styling of UI - buttons, caption, etc.)
+	<link rel="stylesheet" href="path/to/default-skin/default-skin.css"> 
+
+	<!-- PhotoSwipe Core JS file -->
+	<script src="src/PhotoSwipe/photoswipe.min.js"></script> 
+
+	<!-- PhotoSwipe UI JS file -->
+	<script src="src/PhotoSwipe/photoswipe-ui-default.min.js"></script>
+
+	<!-- jqPhotoSwipe JS file -->
+	<script src="src/jqPhotoSwipe.min.js"></script> 
   </head>
   <body>
     <section class="page-header">
@@ -74,6 +92,23 @@
     $(".fancybox").jqPhotoSwipe();
 });
 </code></pre>
+
+
+<h3>
+	Demo
+</h3>
+
+<p>
+<a class="fancybox" href="http://lorempixel.com/1024/768/" data-fancybox-group="uniquegalleryname" title="Photo Caption #1" alt="Photo Caption #1"><img src="http://lorempixel.com/320/200/" border="0"></a>
+<a class="fancybox" href="http://lorempixel.com/1024/768/" data-fancybox-group="uniquegalleryname" title="Photo Caption #2" alt="Photo Caption #2"><img src="http://lorempixel.com/320/200/" border="0"></a>
+<a class="fancybox" href="http://lorempixel.com/1024/768/" data-fancybox-group="uniquegalleryname" title="Photo Caption #3" alt="Photo Caption #3"><img src="http://lorempixel.com/320/200/" border="0"></a>
+</p>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$(".fancybox").jqPhotoSwipe();
+	});
+</script>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/ergec/PhotoSwipe-jQuery-Wrapper">jqPhotoSwipe - jQuery for PhotoSwipe</a> is maintained by <a href="https://github.com/ergec">ergec</a>.</span>
