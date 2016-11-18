@@ -22,8 +22,8 @@ Here I used fancybox class but it's up to you to change it.
     <!-- PhotoSwipe UI JS file -->
     <script src="path/to/photoswipe-ui-default.min.js"></script>
 
-    <!-- esPhotoSwipe JS file -->
-    <script src="path/to/esPhotoSwipe.min.js"></script> 
+    <!-- jqPhotoSwipe JS file -->
+    <script src="path/to/jqPhotoSwipe.min.js"></script> 
 
 ###HTML
 
@@ -40,5 +40,5 @@ Here I used fancybox class but it's up to you to change it.
 ###JavaScript
 
     $(document).ready(function () {
-        $(".fancybox").esPhotoSwipe();
+        $(".fancybox").jqPhotoSwipe();
     });
