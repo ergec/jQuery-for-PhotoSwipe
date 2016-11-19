@@ -1,19 +1,7 @@
 (function (jQuery) {
 	jQuery.fn.jqPhotoSwipe = function (options) {
 		var _photoswipe = {};
-		var defaults = {
-			showHideOpacity: false,
-			showAnimationDuration: 0,
-			hideAnimationDuration: 0,
-			shareEl: false, 
-			bgOpacity : 0.7, 
-			closeOnScroll: false, 
-			tapToClose: false, 
-			clickToCloseNonZoomable: false, 
-			index: 0,
-			timeToIdleOutside: 0,
-			timeToIdle: 0
-		};
+		var defaults = {};
 		_photoswipe.galleries = [];
 		_photoswipe.galleriesindex = [];
 		var $galleryid = 0;
@@ -21,15 +9,12 @@
 		var pswpElement = $(pswpHTML).appendTo("body")[0];
 		this.each(function () {
 			var $options = $.extend(defaults, options);
-
 			var $this = $(this);
-
 			var $galleryname = $this.data("fancybox-group");
 			if (!$galleryname) {
 				$galleryname = "singleimage" + (Math.random() * (9999999 - 1) + 1);
 				$this.data("fancybox-group", $galleryname);
 			}
-
 			if (_photoswipe.galleriesindex.indexOf($galleryname) === -1) {
 				$galleryid = _photoswipe.galleriesindex.length;
 				_photoswipe.galleriesindex.push($galleryname);
@@ -39,9 +24,7 @@
 			} else {
 				$galleryid = _photoswipe.galleriesindex.indexOf($galleryname);
 			}
-
 			var $galleryid2 = $galleryid;
-
 			$this.data("i", _photoswipe.galleries[$galleryid].i);
 			_photoswipe.galleries[$galleryid2].items.push({
 				src: $this.attr("href"),
