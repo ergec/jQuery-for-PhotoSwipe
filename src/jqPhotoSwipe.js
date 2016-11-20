@@ -1,3 +1,7 @@
+/*!
+jqPhotoSwipe v0.1 - jQuery for PhotoSwipe
+https://ergec.github.io/jQuery-for-PhotoSwipe/
+*/
 (function (jQuery) {
 	jQuery.fn.jqPhotoSwipe = function (options) {
 		var _photoswipe = {};
