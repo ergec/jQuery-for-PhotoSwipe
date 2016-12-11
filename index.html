@@ -1,110 +1,123 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>jqPhotoSwipe - jQuery for PhotoSwipe by ergec</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
 
-    <!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> 
+<head>
+	<meta charset="UTF-8">
+	<title>jqPhotoSwipe - jQuery for PhotoSwipe by ergec</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 	<!-- PhotoSwipe Core CSS file -->
-	<link rel="stylesheet" href="src/PhotoSwipe/photoswipe.css"> 
+	<link rel="stylesheet" href="src/PhotoSwipe/photoswipe.css">
 
 	<!-- PhotoSwipe Skin CSS file (styling of UI - buttons, caption, etc.)-->
-	<link rel="stylesheet" href="src/PhotoSwipe/default-skin/default-skin.css"> 
+	<link rel="stylesheet" href="src/PhotoSwipe/default-skin/default-skin.css">
 
 	<!-- PhotoSwipe Core JS file -->
-	<script src="src/PhotoSwipe/photoswipe.min.js"></script> 
+	<script src="src/PhotoSwipe/photoswipe.min.js"></script>
 
 	<!-- PhotoSwipe UI JS file -->
 	<script src="src/PhotoSwipe/photoswipe-ui-default.min.js"></script>
 
 	<!-- jqPhotoSwipe JS file -->
-	<script src="src/jqPhotoSwipe.min.js"></script> 
+	<script src="src/jqPhotoSwipe.js"></script>
 
 	<style type="text/css">
-	.site-footer-credits {
-		font-size: 9px;
-	}
+		.site-footer-credits {
+			font-size: 9px;
+		}
+		ul {
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+		}
 	</style>
-  </head>
-  <body>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+</head>
 
-  ga('create', 'UA-46864242-3', 'auto');
-  ga('send', 'pageview');
+<body>
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-</script>
-    <section class="page-header">
-      <h1 class="project-name">jqPhotoSwipe - jQuery for PhotoSwipe</h1>
-      <h2 class="project-tagline">Easy to use jQuery wrapper for PhotoSwipe. No need to image dimensions.</h2>
-	<a href="https://ergec.github.io" class="btn">Home</a>
-      <a href="https://github.com/ergec/jQuery-for-PhotoSwipe" class="btn">View on GitHub</a>
-      <a href="https://github.com/ergec/jQuery-for-PhotoSwipe/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/ergec/jQuery-for-PhotoSwipe/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+		ga('create', 'UA-46864242-3', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<section class="page-header">
+		<h1 class="project-name">jqPhotoSwipe - jQuery for PhotoSwipe</h1>
+		<h2 class="project-tagline">Easy to use jQuery wrapper for PhotoSwipe. No need to image dimensions.</h2>
+		<a href="https://ergec.github.io" class="btn">Home</a>
+		<a href="https://github.com/ergec/jQuery-for-PhotoSwipe" class="btn">View on GitHub</a>
+		<a href="https://github.com/ergec/jQuery-for-PhotoSwipe/zipball/master" class="btn">Download .zip</a>
+		<a href="https://github.com/ergec/jQuery-for-PhotoSwipe/tarball/master" class="btn">Download .tar.gz</a>
+	</section>
 
-    <section class="main-content">
-      <h1>
-<a id="jquery-wrapper-for-photoswipe" class="anchor" href="#jquery-wrapper-for-photoswipe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jQuery Wrapper for <a href="https://github.com/dimsemenov/photoswipe">PhotoSwipe</a>
-</h1>
+	<section class="main-content">
+		<h1>
+			<a id="jquery-wrapper-for-photoswipe" class="anchor" href="#jquery-wrapper-for-photoswipe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jQuery Wrapper for <a href="https://github.com/dimsemenov/photoswipe">PhotoSwipe</a>
+		</h1>
 
-<p>This plugin will allow you to easily transition from your existing fancybox plugin to PhotoSwipe without altering you HTML layout or finding a way define image dimensions. Plugin gets your existing html layout and creates all structure needed for <a href="https://github.com/dimsemenov/photoswipe">PhotoSwipe</a>.</p>
+		<p>This plugin will allow you to easily transition from your existing fancybox plugin to PhotoSwipe without altering you HTML layout or finding a way define image dimensions. Plugin gets your existing html layout and creates all structure needed for <a href="https://github.com/dimsemenov/photoswipe">PhotoSwipe</a>.</p>
 
-	    <h2>Key Features</h2>
-	    <ul>
-		    <li><b>Works without image dimensions</b>, you don't have to find a way to get image dimensions, plugin finds them for you.</li>
-		    <li><b>Ultra light</b>, 58 lines of code, 3KB uncompressed, 2KB compressed.</li>
-		    <li><b>Low bandwidth usage</b>, loads original images when needed, not before. Saves bandwidth on limited connections.</li>
-		    <li><b>Supports fancybox</b>, you can easily switch from fancybox to PhotoSwipe</li>
-	    </ul>
-	    
-	    
-<h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+		<h2>Key Features</h2>
+		<ul>
+			<li><b>Works without image dimensions</b>, you don't have to find a way to get image dimensions, plugin finds them for you.</li>
+			<li><b>Ultra light</b>, 58 lines of code, 3KB uncompressed, 2KB compressed.</li>
+			<li><b>Low bandwidth usage</b>, loads original images when needed, not before. Saves bandwidth on limited connections.</li>
+			<li><b>Supports fancybox</b>, you can easily switch from fancybox to PhotoSwipe</li>
+		</ul>
 
-<p>Here I used fancybox class but it's up to you to change it.</p>
 
-<h3>
-<a id="includes" class="anchor" href="#includes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Includes</h3>
+		<h2>
+			<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
-<pre><code>&lt;!-- jQuery --&gt;
-&lt;script src="path/to/jquery.min.js"&gt;&lt;/script&gt; 
+		<p>Here I used fancybox class but it's up to you to change it.</p>
 
-&lt;!-- PhotoSwipe Core CSS file --&gt;
-&lt;link rel="stylesheet" href="path/to/photoswipe.css"&gt; 
+		<h3>
+			<a id="includes" class="anchor" href="#includes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Includes</h3>
 
-&lt;!-- PhotoSwipe Skin CSS file (styling of UI - buttons, caption, etc.) --&gt;
-&lt;link rel="stylesheet" href="path/to/default-skin/default-skin.css"&gt; 
+		<pre><code>&lt;!-- jQuery --&gt;
+					&lt;script src="path/to/jquery.min.js"&gt;&lt;/script&gt; 
 
-&lt;!-- PhotoSwipe Core JS file --&gt;
-&lt;script src="path/to/photoswipe.min.js"&gt;&lt;/script&gt; 
+					&lt;!-- PhotoSwipe Core CSS file --&gt;
+					&lt;link rel="stylesheet" href="path/to/photoswipe.css"&gt; 
 
-&lt;!-- PhotoSwipe UI JS file --&gt;
-&lt;script src="path/to/photoswipe-ui-default.min.js"&gt;&lt;/script&gt;
+					&lt;!-- PhotoSwipe Skin CSS file (styling of UI - buttons, caption, etc.) --&gt;
+					&lt;link rel="stylesheet" href="path/to/default-skin/default-skin.css"&gt; 
 
-&lt;!-- jqPhotoSwipe JS file --&gt;
-&lt;script src="path/to/jqPhotoSwipe.min.js"&gt;&lt;/script&gt; 
-</code></pre>
+					&lt;!-- PhotoSwipe Core JS file --&gt;
+					&lt;script src="path/to/photoswipe.min.js"&gt;&lt;/script&gt; 
 
-<h3>
-<a id="html" class="anchor" href="#html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTML</h3>
+					&lt;!-- PhotoSwipe UI JS file --&gt;
+					&lt;script src="path/to/photoswipe-ui-default.min.js"&gt;&lt;/script&gt;
 
-<p><strong>Single Image</strong></p>
+					&lt;!-- jqPhotoSwipe JS file --&gt;
+					&lt;script src="path/to/jqPhotoSwipe.min.js"&gt;&lt;/script&gt; 
+				</code></pre>
+
+		<h3>
+			<a id="html" class="anchor" href="#html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTML</h3>
+
+		<p><strong>Single Image</strong></p>
 
 <pre><code>&lt;a class="fancybox" href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1"&gt;&lt;img src="images/01-thumb.jpg" border="0"&gt;&lt;/a&gt;
 </code></pre>
 
-<p><strong>Image Gallery</strong></p>
+		<p><strong>Image Gallery</strong></p>
 
 <pre><code>&lt;a class="fancybox" href="images/01-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #1" alt="Photo Caption #1"&gt;&lt;img src="images/01-thumb.jpg" border="0"&gt;&lt;/a&gt;
 &lt;a class="fancybox" href="images/02-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #2" alt="Photo Caption #1"&gt;&lt;img src="images/02-thumb.jpg" border="0"&gt;&lt;/a&gt;
@@ -112,46 +125,103 @@
 &lt;a class="fancybox" href="images/04-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #4" alt="Photo Caption #1"&gt;&lt;img src="images/04-thumb.jpg" border="0"&gt;&lt;/a&gt;
 </code></pre>
 
-<h3>
-<a id="javascript" class="anchor" href="#javascript" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JavaScript</h3>
+<pre><code>&lt;ul class="forcedgallery"&gt;
+	&lt;li&gt;
+		&lt;a class="" href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1"&gt;
+			&lt;img src="images/01-thumb.jpg" border="0"&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a class="" href="images/02-large.jpg" title="Photo Caption #2" alt="Photo Caption #1"&gt;
+			&lt;img src="images/02-thumb.jpg" border="0"&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a class="" href="images/03-large.jpg" title="Photo Caption #3" alt="Photo Caption #1"&gt;
+			&lt;img src="images/03-thumb.jpg" border="0"&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a class="" href="images/04-large.jpg" title="Photo Caption #4" alt="Photo Caption #1"&gt;
+			&lt;img src="images/04-thumb.jpg" border="0"&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</code>
+</pre>
 
-<pre><code>$(document).ready(function () {
-    $(".fancybox").jqPhotoSwipe();
-});
-</code></pre>
+		<h3>
+			<a id="javascript" class="anchor" href="#javascript" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JavaScript</h3>
 
-
-<h3>
-	Demo
-</h3>
-
-<h4>Single Image</h4>
-<p>
-<a class="fancybox" href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1"><img src="images/01-thumb.jpg" border="0"></a>
-</p>
-
-<h4>Image Gallery</h4>
-<p>
-<a class="fancybox" href="images/01-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #1" alt="Photo Caption #1"><img src="images/01-thumb.jpg" border="0"></a>
-<a class="fancybox" href="images/02-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #2" alt="Photo Caption #1"><img src="images/02-thumb.jpg" border="0"></a>
-<a class="fancybox" href="images/03-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #3" alt="Photo Caption #1"><img src="images/03-thumb.jpg" border="0"></a>
-<a class="fancybox" href="images/04-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #4" alt="Photo Caption #1"><img src="images/04-thumb.jpg" border="0"></a>
-</p>
-
-<script type="text/javascript">
-	$(document).ready(function () {
-		$(".fancybox").jqPhotoSwipe();
+		<pre>
+<code>$(document).ready(function () {
+	$(".fancybox").jqPhotoSwipe();
+	$(".forcedgallery > li > a").jqPhotoSwipe({
+		forceSingleGallery: true
 	});
-</script>
+});</code>
+		</pre>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/ergec/jQuery-for-PhotoSwipe">jqPhotoSwipe - jQuery for PhotoSwipe</a> is maintained by <a href="https://github.com/ergec">ergec</a>.</span>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
 
-    </section>
+		<h3>
+			Demo
+		</h3>
 
-  
-  </body>
+		<h4>Single Image</h4>
+		<p>
+			<a class="fancybox" href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1"><img src="images/01-thumb.jpg" border="0"></a>
+		</p>
+
+		<h4>Image Gallery</h4>
+		<p>
+			<a class="fancybox" href="images/01-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #1" alt="Photo Caption #1"><img src="images/01-thumb.jpg" border="0"></a>
+			<a class="fancybox" href="images/02-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #2" alt="Photo Caption #1"><img src="images/02-thumb.jpg" border="0"></a>
+			<a class="fancybox" href="images/03-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #3" alt="Photo Caption #1"><img src="images/03-thumb.jpg" border="0"></a>
+			<a class="fancybox" href="images/04-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #4" alt="Photo Caption #1"><img src="images/04-thumb.jpg" border="0"></a>
+		</p>
+
+		<h4>Image Gallery (Forced)</h4>
+		<ul class="forcedgallery">
+			<li>
+				<a class="" href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1">
+					<img src="images/01-thumb.jpg" border="0">
+				</a>
+			</li>
+			<li>
+				<a class="" href="images/02-large.jpg" title="Photo Caption #2" alt="Photo Caption #1">
+					<img src="images/02-thumb.jpg" border="0">
+				</a>
+			</li>
+			<li>
+				<a class="" href="images/03-large.jpg" title="Photo Caption #3" alt="Photo Caption #1">
+					<img src="images/03-thumb.jpg" border="0">
+				</a>
+			</li>
+			<li>
+				<a class="" href="images/04-large.jpg" title="Photo Caption #4" alt="Photo Caption #1">
+					<img src="images/04-thumb.jpg" border="0">
+				</a>
+			</li>
+		</ul>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".fancybox").jqPhotoSwipe();
+				$(".forcedgallery > li > a").jqPhotoSwipe({
+					forceSingleGallery: true
+				});
+			});
+		</script>
+
+		<footer class="site-footer">
+			<span class="site-footer-owner"><a href="https://github.com/ergec/jQuery-for-PhotoSwipe">jqPhotoSwipe - jQuery for PhotoSwipe</a> is maintained by <a href="https://github.com/ergec">ergec</a>.</span>
+
+			<span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+		</footer>
+
+	</section>
+
+
+</body>
+
 </html>
