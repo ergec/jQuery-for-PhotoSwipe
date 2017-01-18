@@ -54,7 +54,7 @@ https://ergec.github.io/jQuery-for-PhotoSwipe/
 			        	imgpreload.onload = function() {
 			        		item.w = this.width;
 				        	item.h = this.height;
-				        	_photoswipe.galleries[$galleryid2].obj.invalidateCurrItems();
+				        	item.needsUpdate = true;
 				        	_photoswipe.galleries[$galleryid2].obj.updateSize(true);
 			        	};
 			        	imgpreload.src = item.src;
