@@ -49,16 +49,16 @@ https://ergec.github.io/jQuery-for-PhotoSwipe/
 				_photoswipe.galleries[$galleryid2].obj = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, _photoswipe.galleries[$galleryid2].items, $options);
 				_photoswipe.galleries[$galleryid2].obj.init();
 				_photoswipe.galleries[$galleryid2].obj.listen('imageLoadComplete', function(index, item) {
-			        if (item.w == 0 && item.h == 0) {
-			        	var imgpreload = new Image(); 
-			        	imgpreload.onload = function() {
-			        		item.w = this.width;
-				        	item.h = this.height;
-				        	item.needsUpdate = true;
-				        	_photoswipe.galleries[$galleryid2].obj.updateSize(true);
-			        	};
-			        	imgpreload.src = item.src;
-			        }
+					if (item.w == 0 && item.h == 0) {
+						var imgpreload = new Image(); 
+						imgpreload.onload = function() {
+							item.w = this.width;
+							item.h = this.height;
+							item.needsUpdate = true;
+							_photoswipe.galleries[$galleryid2].obj.updateSize(true);
+						};
+						imgpreload.src = item.src;
+					}
 				});
 				return false;
 			});
