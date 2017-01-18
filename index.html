@@ -37,6 +37,9 @@
 			margin: 0px;
 			padding: 0px;
 		}
+		.thumb {
+			width: 150px;
+		}
 	</style>
 </head>
 
@@ -116,49 +119,46 @@
 <pre><code>&lt;a class="fancybox" href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1"&gt;&lt;img src="images/01-thumb.jpg" border="0"&gt;&lt;/a&gt;
 </code></pre>
 
-		<p><strong>Image Gallery</strong></p>
+		<p><strong>FancyBox Style Image Gallery</strong></p>
 
-<pre><code>&lt;a class="fancybox" href="images/01-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #1" alt="Photo Caption #1"&gt;&lt;img src="images/01-thumb.jpg" border="0"&gt;&lt;/a&gt;
-&lt;a class="fancybox" href="images/02-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #2" alt="Photo Caption #1"&gt;&lt;img src="images/02-thumb.jpg" border="0"&gt;&lt;/a&gt;
-&lt;a class="fancybox" href="images/03-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #3" alt="Photo Caption #1"&gt;&lt;img src="images/03-thumb.jpg" border="0"&gt;&lt;/a&gt;
-&lt;a class="fancybox" href="images/04-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #4" alt="Photo Caption #1"&gt;&lt;img src="images/04-thumb.jpg" border="0"&gt;&lt;/a&gt;
-</code></pre>
+<pre><code>1.
+&lt;p&gt;
+	&lt;a class="fancybox" href="images/01-large.jpg" data-fancybox-group="gallery1" title="Photo Caption #1" alt="Photo Caption #1"&gt;&lt;img src="images/01-thumb.jpg" border="0" class="thumb"&gt;&lt;/a&gt;
+	&lt;a class="fancybox" href="images/02-large.jpg" data-fancybox-group="gallery1" title="Photo Caption #2" alt="Photo Caption #1"&gt;&lt;img src="images/02-thumb.jpg" border="0" class="thumb"&gt;&lt;/a&gt;
+&lt;/p&gt;
+2.
+&lt;p&gt;
+	&lt;a class="fancybox" href="images/03-large.jpg" data-fancybox-group="gallery2" title="Photo Caption #3" alt="Photo Caption #1"&gt;&lt;img src="images/03-thumb.jpg" border="0" class="thumb"&gt;&lt;/a&gt;
+	&lt;a class="fancybox" href="images/04-large.jpg" data-fancybox-group="gallery2" title="Photo Caption #4" alt="Photo Caption #1"&gt;&lt;img src="images/04-thumb.jpg" border="0" class="thumb"&gt;&lt;/a&gt;
+&lt;/p&gt;</code></pre>
 
-<pre><code>&lt;ul class="forcedgallery"&gt;
-	&lt;li&gt;
-		&lt;a class="" href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1"&gt;
-			&lt;img src="images/01-thumb.jpg" border="0"&gt;
-		&lt;/a&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a class="" href="images/02-large.jpg" title="Photo Caption #2" alt="Photo Caption #1"&gt;
-			&lt;img src="images/02-thumb.jpg" border="0"&gt;
-		&lt;/a&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a class="" href="images/03-large.jpg" title="Photo Caption #3" alt="Photo Caption #1"&gt;
-			&lt;img src="images/03-thumb.jpg" border="0"&gt;
-		&lt;/a&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a class="" href="images/04-large.jpg" title="Photo Caption #4" alt="Photo Caption #1"&gt;
-			&lt;img src="images/04-thumb.jpg" border="0"&gt;
-		&lt;/a&gt;
-	&lt;/li&gt;
-&lt;/ul&gt;</code>
-</pre>
+<p><strong>Forced Image Gallery</strong></p>
+
+<pre><code>&lt;div class="forcedgallery"&gt;
+	1.
+	&lt;p&gt;
+		&lt;a href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1"&gt;&lt;img src="images/01-thumb.jpg" border="0" class="thumb"&gt;&lt;/a&gt;
+		&lt;a href="images/02-large.jpg" title="Photo Caption #2" alt="Photo Caption #1"&gt;&lt;img src="images/02-thumb.jpg" border="0" class="thumb"&gt;&lt;/a&gt;
+	&lt;/p&gt;
+	2.
+	&lt;p&gt;
+		&lt;a href="images/03-large.jpg" title="Photo Caption #3" alt="Photo Caption #1"&gt;&lt;img src="images/03-thumb.jpg" border="0" class="thumb"&gt;&lt;/a&gt;
+		&lt;a href="images/04-large.jpg" title="Photo Caption #4" alt="Photo Caption #1"&gt;&lt;img src="images/04-thumb.jpg" border="0" class="thumb"&gt;&lt;/a&gt;
+	&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 
 		<h3>
 			<a id="javascript" class="anchor" href="#javascript" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JavaScript</h3>
 
 		<pre>
 <code>$(document).ready(function () {
+	//By default, plugin uses `data-fancybox-group` attribute to create galleries.
 	$(".fancybox").jqPhotoSwipe();
-	$(".forcedgallery > li > a").jqPhotoSwipe({
+	//This option forces plugin to create a single gallery and ignores `data-fancybox-group` attribute.
+	$(".forcedgallery > a").jqPhotoSwipe({
 		forceSingleGallery: true
 	});
-});</code>
-		</pre>
+});</code></pre>
 
 
 
@@ -168,45 +168,41 @@
 
 		<h4>Single Image</h4>
 		<p>
-			<a class="fancybox" href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1"><img src="images/01-thumb.jpg" border="0"></a>
+			<a class="fancybox" href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1">
+				<img src="images/01-thumb.jpg" border="0" class="thumb">
+			</a>
 		</p>
 
-		<h4>Image Gallery</h4>
+		<h4>Fancybox Style Image Galleries</h4>
+		1.
 		<p>
-			<a class="fancybox" href="images/01-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #1" alt="Photo Caption #1"><img src="images/01-thumb.jpg" border="0"></a>
-			<a class="fancybox" href="images/02-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #2" alt="Photo Caption #1"><img src="images/02-thumb.jpg" border="0"></a>
-			<a class="fancybox" href="images/03-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #3" alt="Photo Caption #1"><img src="images/03-thumb.jpg" border="0"></a>
-			<a class="fancybox" href="images/04-large.jpg" data-fancybox-group="uniquegalleryname" title="Photo Caption #4" alt="Photo Caption #1"><img src="images/04-thumb.jpg" border="0"></a>
+			<a class="fancybox" href="images/01-large.jpg" data-fancybox-group="gallery1" title="Photo Caption #1" alt="Photo Caption #1"><img src="images/01-thumb.jpg" border="0" class="thumb"></a>
+			<a class="fancybox" href="images/02-large.jpg" data-fancybox-group="gallery1" title="Photo Caption #2" alt="Photo Caption #1"><img src="images/02-thumb.jpg" border="0" class="thumb"></a>
+		</p>
+		2.
+		<p>
+			<a class="fancybox" href="images/03-large.jpg" data-fancybox-group="gallery2" title="Photo Caption #3" alt="Photo Caption #1"><img src="images/03-thumb.jpg" border="0" class="thumb"></a>
+			<a class="fancybox" href="images/04-large.jpg" data-fancybox-group="gallery2" title="Photo Caption #4" alt="Photo Caption #1"><img src="images/04-thumb.jpg" border="0" class="thumb"></a>
 		</p>
 
-		<h4>Image Gallery (Forced)</h4>
-		<ul class="forcedgallery">
-			<li>
-				<a class="" href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1">
-					<img src="images/01-thumb.jpg" border="0">
-				</a>
-			</li>
-			<li>
-				<a class="" href="images/02-large.jpg" title="Photo Caption #2" alt="Photo Caption #1">
-					<img src="images/02-thumb.jpg" border="0">
-				</a>
-			</li>
-			<li>
-				<a class="" href="images/03-large.jpg" title="Photo Caption #3" alt="Photo Caption #1">
-					<img src="images/03-thumb.jpg" border="0">
-				</a>
-			</li>
-			<li>
-				<a class="" href="images/04-large.jpg" title="Photo Caption #4" alt="Photo Caption #1">
-					<img src="images/04-thumb.jpg" border="0">
-				</a>
-			</li>
-		</ul>
+		<h4>Single Combined Image Gallery (Forced)</h4>
+		<div class="forcedgallery">
+				1.
+				<p>
+					<a href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1"><img src="images/01-thumb.jpg" border="0" class="thumb"></a>
+					<a href="images/02-large.jpg" title="Photo Caption #2" alt="Photo Caption #1"><img src="images/02-thumb.jpg" border="0" class="thumb"></a>
+				</p>
+				2.
+				<p>
+					<a href="images/03-large.jpg" title="Photo Caption #3" alt="Photo Caption #1"><img src="images/03-thumb.jpg" border="0" class="thumb"></a>
+					<a href="images/04-large.jpg" title="Photo Caption #4" alt="Photo Caption #1"><img src="images/04-thumb.jpg" border="0" class="thumb"></a>
+				</p>
+		</div>
 
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$(".fancybox").jqPhotoSwipe();
-				$(".forcedgallery > li > a").jqPhotoSwipe({
+				$(".forcedgallery a").jqPhotoSwipe({
 					forceSingleGallery: true
 				});
 			});
