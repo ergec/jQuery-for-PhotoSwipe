@@ -6,7 +6,10 @@ https://ergec.github.io/jQuery-for-PhotoSwipe/
 	jQuery.fn.jqPhotoSwipe = function (options) {
 		var _photoswipe = {};
 		var defaults = {
-			forceSingleGallery: false
+			forceSingleGallery: false,
+			galleryOpen: function (gallery) {
+
+			}
 		};
 		_photoswipe.galleries = [];
 		_photoswipe.galleriesindex = [];
@@ -44,10 +47,15 @@ https://ergec.github.io/jQuery-for-PhotoSwipe/
 				h: 0
 			});
 			$this.off("click").on("click", function (e) {
+				e.preventDefault();
 				var index = $(this).data("i");
 				$options.index = index;
 				_photoswipe.galleries[$galleryid2].obj = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, _photoswipe.galleries[$galleryid2].items, $options);
 				_photoswipe.galleries[$galleryid2].obj.init();
+				
+				_photoswipe.galleries[$galleryid2].obj.listen('initialZoomInEnd', function() {
+					$options.galleryOpen(_photoswipe.galleries[$galleryid2].obj);
+				});
 				_photoswipe.galleries[$galleryid2].obj.listen('imageLoadComplete', function(index, item) {
 					if (item.w == 0 && item.h == 0) {
 						var imgpreload = new Image(); 
@@ -60,7 +68,6 @@ https://ergec.github.io/jQuery-for-PhotoSwipe/
 						imgpreload.src = item.src;
 					}
 				});
-				return false;
 			});
 			_photoswipe.galleries[$galleryid].i ++;
 		});
