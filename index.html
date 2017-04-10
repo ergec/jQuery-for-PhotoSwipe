@@ -156,6 +156,10 @@
 	$(".fancybox").jqPhotoSwipe({
 		galleryOpen: function (gallery) {
 			//with `gallery` object you can access all methods and properties described here http://photoswipe.com/documentation/api.html
+			//console.log(gallery);
+			//console.log(gallery.currItem);
+			//console.log(gallery.getCurrentIndex());
+			//gallery.zoomTo(1, {x:gallery.viewportSize.x/2,y:gallery.viewportSize.y/2}, 500);
 		}
 	});
 	//This option forces plugin to create a single gallery and ignores `data-fancybox-group` attribute.
@@ -208,6 +212,10 @@
 				$(".fancybox").jqPhotoSwipe({
 					galleryOpen: function (gallery) {
 						//with `gallery` object you can access all methods and properties described here http://photoswipe.com/documentation/api.html
+						//console.log(gallery);
+						//console.log(gallery.currItem);
+						//console.log(gallery.getCurrentIndex());
+						//gallery.zoomTo(1, {x:gallery.viewportSize.x/2,y:gallery.viewportSize.y/2}, 500);
 					}
 				});
 				$(".forcedgallery a").jqPhotoSwipe({
