@@ -160,6 +160,7 @@
 			//console.log(gallery.currItem);
 			//console.log(gallery.getCurrentIndex());
 			//gallery.zoomTo(1, {x:gallery.viewportSize.x/2,y:gallery.viewportSize.y/2}, 500);
+			gallery.toggleDesktopZoom();
 		}
 	});
 	//This option forces plugin to create a single gallery and ignores `data-fancybox-group` attribute.
@@ -215,7 +216,7 @@
 						//console.log(gallery);
 						//console.log(gallery.currItem);
 						//console.log(gallery.getCurrentIndex());
-						//gallery.zoomTo(1, {x:gallery.viewportSize.x/2,y:gallery.viewportSize.y/2}, 500);
+						gallery.toggleDesktopZoom();
 					}
 				});
 				$(".forcedgallery a").jqPhotoSwipe({
