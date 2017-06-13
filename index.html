@@ -69,7 +69,7 @@
 		<a href="https://github.com/ergec/jQuery-for-PhotoSwipe/tarball/master" class="btn">Download .tar.gz</a>
 	</section>
 
-	<section class="main-content">
+	<section class="main-content photoswipe-gallery">
 		<h1>
 			<a id="jquery-wrapper-for-photoswipe" class="anchor" href="#jquery-wrapper-for-photoswipe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jQuery Wrapper for <a href="https://github.com/dimsemenov/photoswipe">PhotoSwipe</a>
 		</h1>
@@ -152,21 +152,23 @@
 
 		<pre>
 <code>$(document).ready(function () {
-	//By default, plugin uses `data-fancybox-group` attribute to create galleries.
-	$(".fancybox").jqPhotoSwipe({
-		galleryOpen: function (gallery) {
-			//with `gallery` object you can access all methods and properties described here http://photoswipe.com/documentation/api.html
-			//console.log(gallery);
-			//console.log(gallery.currItem);
-			//console.log(gallery.getCurrentIndex());
-			//gallery.zoomTo(1, {x:gallery.viewportSize.x/2,y:gallery.viewportSize.y/2}, 500);
-			gallery.toggleDesktopZoom();
-		}
-	});
-	//This option forces plugin to create a single gallery and ignores `data-fancybox-group` attribute.
-	$(".forcedgallery > a").jqPhotoSwipe({
-		forceSingleGallery: true
-	});
+	//By default, plugin uses `data-fancybox-group` attribute to create galleries. Optimization: to add 'photoswipe-gallery' class condition script to detect which page need to run the script
+	if ($('.photoswipe-gallery').length > 0){
+		$(".fancybox").jqPhotoSwipe({
+			galleryOpen: function (gallery) {
+				//with `gallery` object you can access all methods and properties described here http://photoswipe.com/documentation/api.html
+				//console.log(gallery);
+				//console.log(gallery.currItem);
+				//console.log(gallery.getCurrentIndex());
+				//gallery.zoomTo(1, {x:gallery.viewportSize.x/2,y:gallery.viewportSize.y/2}, 500);
+				gallery.toggleDesktopZoom();
+			}
+		});
+		//This option forces plugin to create a single gallery and ignores `data-fancybox-group` attribute.
+		$(".forcedgallery > a").jqPhotoSwipe({
+			forceSingleGallery: true
+		});
+	}
 });</code></pre>
 
 
@@ -176,7 +178,7 @@
 		</h3>
 
 		<h4>Single Image</h4>
-		<p>
+		<p class="photoswipe-gallery">
 			<a class="fancybox" href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1">
 				<img src="images/01-thumb.jpg" border="0" class="thumb">
 			</a>
@@ -184,18 +186,18 @@
 
 		<h4>Fancybox Style Image Galleries</h4>
 		1.
-		<p>
+		<p class="photoswipe-gallery">
 			<a class="fancybox" href="images/01-large.jpg" data-fancybox-group="gallery1" title="Photo Caption #1" alt="Photo Caption #1"><img src="images/01-thumb.jpg" border="0" class="thumb"></a>
 			<a class="fancybox" href="images/02-large.jpg" data-fancybox-group="gallery1" title="Photo Caption #2" alt="Photo Caption #1"><img src="images/02-thumb.jpg" border="0" class="thumb"></a>
 		</p>
 		2.
-		<p>
+		<p class="photoswipe-gallery">
 			<a class="fancybox" href="images/03-large.jpg" data-fancybox-group="gallery2" title="Photo Caption #3" alt="Photo Caption #1"><img src="images/03-thumb.jpg" border="0" class="thumb"></a>
 			<a class="fancybox" href="images/04-large.jpg" data-fancybox-group="gallery2" title="Photo Caption #4" alt="Photo Caption #1"><img src="images/04-thumb.jpg" border="0" class="thumb"></a>
 		</p>
 
 		<h4>Single Combined Image Gallery (Forced)</h4>
-		<div class="forcedgallery">
+		<div class="forcedgallery photoswipe-gallery">
 				1.
 				<p>
 					<a href="images/01-large.jpg" title="Photo Caption #1" alt="Photo Caption #1"><img src="images/01-thumb.jpg" border="0" class="thumb"></a>
@@ -210,18 +212,20 @@
 
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$(".fancybox").jqPhotoSwipe({
-					galleryOpen: function (gallery) {
-						//with `gallery` object you can access all methods and properties described here http://photoswipe.com/documentation/api.html
-						//console.log(gallery);
-						//console.log(gallery.currItem);
-						//console.log(gallery.getCurrentIndex());
-						gallery.toggleDesktopZoom();
-					}
-				});
-				$(".forcedgallery a").jqPhotoSwipe({
-					forceSingleGallery: true
-				});
+				if ($('.photoswipe-gallery').length > 0){
+					$(".fancybox").jqPhotoSwipe({
+						galleryOpen: function (gallery) {
+							//with `gallery` object you can access all methods and properties described here http://photoswipe.com/documentation/api.html
+							//console.log(gallery);
+							//console.log(gallery.currItem);
+							//console.log(gallery.getCurrentIndex());
+							gallery.toggleDesktopZoom();
+						}
+					});
+					$(".forcedgallery a").jqPhotoSwipe({
+						forceSingleGallery: true
+					});
+				}
 			});
 		</script>
 
