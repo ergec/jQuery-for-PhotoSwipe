@@ -87,6 +87,12 @@ https://ergec.github.io/jQuery-for-PhotoSwipe/
 						$options.galleryOpen(_photoswipe.galleries[$galleryid2].obj);
 					});
 					_photoswipe.galleries[$galleryid2].obj.listen('imageLoadComplete', function(index, item) {
+						loadImg(index, item);
+					});
+					_photoswipe.galleries[$galleryid2].obj.listen('gettingData', function(index, item) {
+						loadImg(index, item);
+					});
+					function loadImg(index, item) {
 						if (item.w == 0 && item.h == 0) {
 							var imgpreload = new Image(); 
 							imgpreload.onload = function() {
@@ -97,7 +103,7 @@ https://ergec.github.io/jQuery-for-PhotoSwipe/
 							};
 							imgpreload.src = item.src;
 						}
-					});
+					}
 				});
 				var $hashparams = parseHash();
 				if ($hashparams.gid) {
