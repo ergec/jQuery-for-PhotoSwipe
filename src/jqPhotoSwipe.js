@@ -1,5 +1,5 @@
 /*!
-jqPhotoSwipe v0.1 - jQuery for PhotoSwipe
+jqPhotoSwipe v0.1.1 - jQuery for PhotoSwipe
 https://ergec.github.io/jQuery-for-PhotoSwipe/
 */
 (function (jQuery) {
